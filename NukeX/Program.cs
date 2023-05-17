@@ -2,6 +2,22 @@
 using System.Text.RegularExpressions;
 using NukeX;
 
+
+// if we use nuke command line arguments, then we start Nuke with same arguments
+if (args?.FirstOrDefault()?.StartsWith(":") == true)
+{
+    // start Process Nuke with same arguments (dot not forget escaping)
+    var argumentsNew = string.Join(" ", args.Select(x => $"\"{x}\""));
+    Process.Start(new ProcessStartInfo("nuke", argumentsNew)
+        {
+            UseShellExecute = false,
+            WorkingDirectory = Directory.GetCurrentDirectory()
+        })
+        ?.WaitForExit();
+    return;
+}
+
+
 var sw = Stopwatch.StartNew();
 
 Console.WriteLine("*** NukeX ***");
@@ -94,5 +110,6 @@ Console.WriteLine($"NukeX build time: {sw.ElapsedMilliseconds} ms");
 Process.Start(new ProcessStartInfo(buildProjectExeFile, arguments)
     {
         UseShellExecute = false,
+        WorkingDirectory = rootFolder
     })
     ?.WaitForExit();
