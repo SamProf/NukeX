@@ -10,6 +10,14 @@
         <PackageOutputPath>./nupkg</PackageOutputPath>
         <Version>1.0.1</Version>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>NukeX</Title>
+        <Description>NukeX is a faster way to run Nuke.Build Targets without wasting time building</Description>
+        <Copyright>SamProf</Copyright>
+        <PackageProjectUrl>https://github.com/SamProf/NukeX</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/SamProf/NukeX/LICENCE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/SamProf/NukeX</RepositoryUrl>
+        <RepositoryType>GIT</RepositoryType>
+        <PackageTags>Nuke</PackageTags>
     </PropertyGroup>
 
 </Project>
